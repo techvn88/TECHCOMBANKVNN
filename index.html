@@ -10,8 +10,6 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
             rel="stylesheet" />
-        <script src="index.js"></script>
-        <script src="api.js"></script>
     </head>
 
     <body onload="init()">
@@ -32,11 +30,29 @@
 
             <p class="title">Transfer to other banks</p>
             <div class="item">
-                <label for="banks" class="title-item">Beneficiary bank</label>
-                <div style="width: 60%">
-                    <select name="bankId" id="banks" class="input"></select>
-                </div>
-            </div>
+              <label for="banks" class="title-item">Beneficiary bank</label>
+              <div style="width: 60%">
+                  <select name="bankId" id="banks" class="input">
+                      <option value="970415">Ngân hàng TMCP Công Thương Việt Nam (Vietinbank)</option>
+                      <option value="970400">Ngân hàng TMCP Sài Gòn Công Thương (SAIGONBANK)</option>
+                      <option value="970403">Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)</option>
+                      <option value="970405">Ngân hàng TMCP Nông Nghiệp và Phát triển nông thôn Việt Nam (Agribank)</option>
+                      <option value="970406">DONG A Joint- Stock Commercial Bank (DongABank)</option>
+                      <option value="970407">Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)</option>
+                      <option value="970408">Global Petro Sole Member Limited Commercial Bank (GPbank)</option>
+                      <option value="970414">Ocean Commercial One Member Limited Liability Bank (OceanBank)</option>
+                      <option value="970416">Ngân hàng TMCP Á Châu (ACB)</option>
+                      <option value="970418">Ngân hàng TMCP Đầu Tư Phát Triển Việt Nam (BIDV)</option>
+                      <option value="970422">Ngân hàng Quân đội (MB)</option>
+                      <option value="970448">Ngân hàng TMCP Phương Đông (OCB)</option>
+                      <option value="970436">Ngân hàng Ngoại thương Việt Nam (Vietcombank)</option>
+                      <option value="970423">Ngân hàng Tiên Phong (TP Bank)</option>
+                      <option value="970432">Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank)</option>
+                      <option value="970428">Ngân hàng TMCP Nam Á (NamABank)</option>
+                  </select>
+              </div>
+          </div>
+          
             <div class="item">
                 <label for="accountNumber" class="title-item">Account number</label>
                 <div style="width: 60%">
@@ -45,7 +61,7 @@
                         id="accountNumber"
                         class="input"
                         pattern="[0-9]*" 
-                        oninput="formatAccountNumber()" />
+                     />
                 </div>
             </div>
             
@@ -191,47 +207,41 @@
         var amount = document.getElementById("Amount").value;
         var message = document.getElementById("message").value;
 
+        // Map bank code to bank name
         if (bank == "970415")
-          bank =
-            "Ngân hàng TMCP Công Thương Việt Nam (Vietinbank)";
+            bank = "Ngân hàng TMCP Công Thương Việt Nam (Vietinbank)";
         else if (bank == "970400")
-          bank = "Ngân hàng TMCP Sài Gòn Công Thương (SAIGONBANK)";
+            bank = "Ngân hàng TMCP Sài Gòn Công Thương (SAIGONBANK)";
         else if (bank == "970403")
-          bank = "Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)";
+            bank = "Ngân hàng TMCP Sài Gòn Thương Tín (Sacombank)";
         else if (bank == "970405")
-          bank =
-            "Ngân hàng TMCP Nông Nghiệp và Phát triển nông thôn Việt Nam (Agribank)";
+            bank = "Ngân hàng TMCP Nông Nghiệp và Phát triển nông thôn Việt Nam (Agribank)";
         else if (bank == "970406")
-          bank = "DONG A Joint- Stock Commercial Bank (DongABank)";
+            bank = "DONG A Joint- Stock Commercial Bank (DongABank)";
         else if (bank == "970407")
-          bank =
-            "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)";
+            bank = "Ngân hàng TMCP Kỹ Thương Việt Nam (Techcombank)";
         else if (bank == "970408")
-          bank = "Global Petro Sole Member Limited Commercial Bank (GPbank)";
+            bank = "Global Petro Sole Member Limited Commercial Bank (GPbank)";
         else if (bank == "970414")
-          bank =
-            "Ocean Commercial One Member Limited Liability Bank (OceanBank)";
+            bank = "Ocean Commercial One Member Limited Liability Bank (OceanBank)";
         else if (bank == "970416")
-          bank = "Ngân hàng TMCP Á Châu (ACB)";
+            bank = "Ngân hàng TMCP Á Châu (ACB)";
         else if (bank == "970418")
-          bank =
-            "Ngân hàng TMCP Đầu Tư Phát Triển Việt Nam (BIDV)";
+            bank = "Ngân hàng TMCP Đầu Tư Phát Triển Việt Nam (BIDV)";
         else if (bank == "970422")
-          bank = "Ngân hàng Quân đội (MB)";
+            bank = "Ngân hàng Quân đội (MB)";
         else if (bank == "970448")
-          bank = "Ngân hàng TMCP Phương Đông (OCB)";
-        else if (bank == "970436"){
+            bank = "Ngân hàng TMCP Phương Đông (OCB)";
+        else if (bank == "970436")
             bank = "Ngân hàng Ngoại thương Việt Nam (Vietcombank)";
-        }
-
         else if (bank == "970423")
-          bank = "Ngân hàng Tiên Phong (TP Bank)";
-        else if (bank == "970432") bank = "Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank)";
-        else if (bank ="970428")
-          bank = "Ngân hàng TMCP Nam Á (NamABank)"
+            bank = "Ngân hàng Tiên Phong (TP Bank)";
+        else if (bank == "970432")
+            bank = "Ngân hàng TMCP Việt Nam Thịnh Vượng (VPBank)";
+        else if (bank == "970428")
+            bank = "Ngân hàng TMCP Nam Á (NamABank)";
 
-
-        if (message == "") message = "Chuyen khoan";
+        if (message == "") message = "NGUYEN VAN DAT chuyen tien";
 
         // Update the bill values
         document.getElementById("bill-bank").textContent = bank;
@@ -257,18 +267,6 @@
         }
         return code;
       }
-  
-    function formatAccountNumber() {
-        var input = document.getElementById("accountNumber");
-        var value = input.value;
-
-        // Remove non-numeric characters
-        var numericValue = value.replace(/\D/g, "");
-
-        // Update the input value
-        input.value = numericValue;
-    }
-
     </script>
     </body>
 </html>
